@@ -12,6 +12,8 @@ void main() {
     lastName: 'Muster',
     gender: Gender.male,
   );
+  final studentA1 = studentA.copyWith(lastName: 'Ketchup');
+
   final studentB = Student(
     firstName: 'Harry',
     lastName: 'Potter',
@@ -27,11 +29,11 @@ void main() {
     lastName: 'Schorle',
     gender: Gender.diverse,
   );
-  courseA.student.add(studentA);
+  courseA.student.add(studentA1);
   courseA.student.add(studentB);
   courseB.student.add(studentC);
   courseB.student.add(studentD);
-  courseB.student.add(studentA);
+  courseB.student.add(studentA1);
   institution.course.add(courseA);
   institution.course.add(courseB);
 
@@ -43,5 +45,5 @@ void main() {
   print(courseB.student);
   print('Insgesamt ${courseB.student.length} Teilnehmer');
   print('\n\n');
-  print('Zugangsberechtigung von Herr Muster: ${studentA.authorization.id}');
+  print('Zugangsberechtigung von Herr Ketchup: ${studentA1.authorization.id}');
 }
